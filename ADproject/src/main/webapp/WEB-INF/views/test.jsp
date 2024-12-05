@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Genesis 한글테스트</title>
+<title>Insert title here</title>
 </head>
 <body>
-2차 테스트
+	하이 아임 서승찬 근데 진짜 나 힘들어 정말루
 </body>
 </html>
