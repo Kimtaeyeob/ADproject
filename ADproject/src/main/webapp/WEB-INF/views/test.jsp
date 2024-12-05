@@ -9,6 +9,7 @@
 <body>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 2차 테스트
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -33,5 +34,9 @@ Rino
 >>>>>>> refs/remotes/origin/SSC
 크리스피크림 도넛을 존나게 갈기자
 >>>>>>> refs/remotes/origin/Genesis
+=======
+	아 짜증나
+	
+>>>>>>> refs/remotes/origin/SSC
 </body>
 </html>
