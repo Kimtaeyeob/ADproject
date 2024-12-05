@@ -8,6 +8,7 @@
 </head>
 <body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 2차 테스트
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -24,5 +25,8 @@ Rino
 >>>>>>> refs/remotes/origin/MacSeo
 3만전자 ㄱㅂㅈㄱ
 >>>>>>> refs/remotes/origin/Genesis
+=======
+	하이 아임 서승찬
+>>>>>>> refs/remotes/origin/SSC
 </body>
 </html>
