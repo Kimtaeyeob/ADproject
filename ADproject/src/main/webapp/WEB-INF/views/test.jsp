@@ -27,6 +27,11 @@ Rino
 >>>>>>> refs/remotes/origin/Genesis
 =======
 	하이 아임 서승찬
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/SSC
+=======
+>>>>>>> refs/remotes/origin/SSC
+크리스피크림 도넛을 존나게 갈기자
+>>>>>>> refs/remotes/origin/Genesis
 </body>
 </html>
