@@ -10,6 +10,7 @@
 <<<<<<< HEAD
 2차 테스트
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 13213132123313
 >>>>>>> refs/remotes/origin/MacSeo
@@ -17,5 +18,11 @@ asasasaas
 =======
 Rino
 >>>>>>> refs/remotes/origin/Rino
+=======
+=======
+13213132123313
+>>>>>>> refs/remotes/origin/MacSeo
+3만전자 ㄱㅂㅈㄱ
+>>>>>>> refs/remotes/origin/Genesis
 </body>
 </html>
