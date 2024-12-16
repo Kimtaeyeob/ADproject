@@ -129,18 +129,18 @@
 					</svg>
 				</button>
 	
-				<button class="login-button">로그인</button>
+				<button class="login-button" onclick = "location.href='login_page.do'">로그인</button>
 		</header>
 	
 		<!-- 사이드 메뉴 -->
 		<aside id="side-menu">
 			<div>
 				<ul>
-					<li><svg xmlns="http://www.w3.org/2000/svg" width="18"
+					<li><button><svg xmlns="http://www.w3.org/2000/svg" width="18"
 							height="18" fill="#f5f5f5" class="bi bi-list" viewBox="0 0 16 16">
 	                <path fill-rule="evenodd"
 								d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-	            </svg> <span class="menu_title">카테고리</span></li>
+	            </svg><span class="menu_title">카테고리</span></li></button>
 					<li><svg xmlns="http://www.w3.org/2000/svg" width="16"
 							height="16" fill="#f5f5f5" class="bi bi-map" viewBox="0 0 16 16">
 	                <path fill-rule="evenodd"

@@ -14,12 +14,17 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = {"/", "/mainhome.do" })
-	public String list(Model model, String search, String search_text, Integer page) {
+	public String list() {
 		
-		return "/WEB-INF/views/main/stepup_main.jsp";
+		return common.Common.main.VIEW_PATH + "stepup_main.jsp";      
 
 	}
 
+	@RequestMapping("login_page.do")
+	public String login_main_page() {
+		return common.Common.login.VIEW_PATH + "login_main.jsp";
+	}
+	
 }
 
 
