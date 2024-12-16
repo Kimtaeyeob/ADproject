@@ -248,6 +248,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	<artifactId>ad</artifactId>
+	<artifactId>a</artifactId>
 	<name>ADproject</name>
 </project>
