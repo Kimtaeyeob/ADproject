@@ -214,7 +214,11 @@ aside{
 }
 
 main {
-	height : 500px;
+	margin-top : 10px;
+	margin-left:150px;
+    margin-bottom : 0;
+    transition: margin-left 0.3s ease; 
+	height : 501px;
 }
 
 .banner_content{
@@ -248,13 +252,6 @@ main {
   font-size: 18px;
 }
 
-main {
-	
-	margin-top : 10px;
-	margin-left:150px;
-    margin-bottom : 0;
-    transition: margin-left 0.3s ease; 
-}
 
 main.shift-collapsed {
     margin-left: 50px; 
