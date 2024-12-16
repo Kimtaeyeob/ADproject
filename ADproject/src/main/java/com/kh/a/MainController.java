@@ -1,18 +1,17 @@
 package com.kh.a;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import dao.AcademyDAO;
 
 
 
 @Controller
 public class MainController {
 
-	
-	public MainController() {
-	}
-	
+
 	@RequestMapping(value = {"/", "/mainhome.do" })
 	public String list() {
 		
