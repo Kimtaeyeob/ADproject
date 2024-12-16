@@ -218,7 +218,7 @@ main {
 	margin-left:150px;
     margin-bottom : 0;
     transition: margin-left 0.3s ease; 
-	height : 502px;
+	height : 502px;  /*필요하면 지우세요  */
 }
 
 .banner_content{
