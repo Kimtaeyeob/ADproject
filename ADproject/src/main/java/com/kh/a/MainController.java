@@ -24,6 +24,11 @@ public class MainController {
 		return common.Common.login.VIEW_PATH + "login_main.jsp";
 	}
 	
+	
+	@RequestMapping("member_join.do")
+	public String member_join_page() {
+		return common.Common.login.VIEW_PATH + "member_join_page.jsp";
+	}
 }
 
 

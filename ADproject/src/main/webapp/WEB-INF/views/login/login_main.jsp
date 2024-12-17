@@ -78,7 +78,7 @@
 					<div class = "input-container">
 						<a href = "#" class = "member_index_search">아이디 찾기</a>
 						<a href = "#" class = "member_index_search">비밀번호 찾기</a>
-						<a href = "#" class = "member_index_search">회원가입</a>
+						<a href = "member_join.do" class = "member_index_search">회원가입</a>
 					</div>
 				</div>
 				
