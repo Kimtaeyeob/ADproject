@@ -276,7 +276,7 @@
 						<span class = "content">${ vo.academy_name }</span>
 						<span class = "content2">${ vo.academy_region }</span>
 						<div class = "star">
-							<i class="fa-solid fa-star"></i><span>${ vo.rating }</span>
+							<i class="fa-solid fa-star" ></i><span id = "star_score">${ vo.rating }</span>
 						</div>
 					</div>
 			
