@@ -311,6 +311,11 @@ div.category_icon{
 	align-items: center;
 	padding-bottom: 60px;
 	gap : 30px;
+	
+}
+
+.cart_icon, .button_design2 {
+    cursor: pointer; /* 버튼 클릭하면 클릭 반응하는 버튼 디자인 함 */
 }
 
 #star_score{

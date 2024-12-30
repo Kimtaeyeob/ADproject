@@ -54,6 +54,14 @@ public class MainController {
 	public String member_join_page() {
 		return common.Common.login.VIEW_PATH + "member_join_page.jsp";
 	}
+	
+	@RequestMapping("cart_page.do")
+	public String cart_page() {
+		
+		return common.Common.cart.VIEW_PATH +"naver_cart.jsp";
+		
+	}
+	
 }
 
 

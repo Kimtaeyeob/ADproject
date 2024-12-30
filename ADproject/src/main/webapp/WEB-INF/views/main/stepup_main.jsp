@@ -241,7 +241,7 @@
 		</div>
 		
 		<div class = "sub_nav">
-			<i class="fa-solid fa-cart-shopping fa-2xl" class = "cart_icon"></i>
+		<i class="fa-solid fa-cart-shopping fa-2xl cart_icon" onclick="location.href='cart_page.do'"></i>
 			<input type = "button" value = "로그인" class = "button_design2" onclick = "location.href='login_page.do'">
 		</div>
 			
