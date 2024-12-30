@@ -58,9 +58,18 @@ public class MainController {
 	@RequestMapping("cart_page.do")
 	public String cart_page() {
 		
-		return common.Common.cart.VIEW_PATH +"naver_cart.jsp";
+		return common.Common.cart.VIEW_PATH +"cart.jsp";
 		
 	}
+	
+	
+	@RequestMapping("check_out.do")
+	public String checkout() {
+		
+		return common.Common.cart.VIEW_PATH +"check_out.jsp";
+		
+	}
+	
 	
 }
 
