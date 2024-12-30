@@ -38,13 +38,14 @@
 	
 	
 	</script>
-
+	
 	<link rel="stylesheet" href="/a/resources/css/login_main.css">
 </head>
 	<body>
+	 
 		
 		<div class = "main_logo">
-			<img src="/a/resources/img/b_logo.png" class="logo_img" style="width: 150px; height: 75px;">
+			<a href = "/mainhome.do"><img src="/a/resources/img/b_logo.png" class="logo_img" style="width: 200px; height: 100px;"></a>
 		</div>
 			
 			<form>

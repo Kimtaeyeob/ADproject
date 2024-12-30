@@ -22,12 +22,11 @@
    <context:component-scan base-package="com.kh.auto, dao, advice, com.kh.aop.service"/> -->
       
    <beans:bean class="com.kh.a.MainController">
-      
+      	<beans:property name="academy_dao"
+						ref = "Academy_daoBean"/>
    </beans:bean>
    
-   <beans:bean class="com.kh.a.AcademyController">
-      <beans:property name="academy_dao" ref="Academy_daoBean" />
-   </beans:bean>
+   
    
    
 </beans:beans>
