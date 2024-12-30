@@ -299,6 +299,7 @@ div.category_icon{
 	border-radius: 40px;
 	border : 3px solid #8c8c8c;
 	background-color: #ffffff;
+	font-family: 'JUA';
 }
 
 .sub_nav{
@@ -312,7 +313,10 @@ div.category_icon{
 	gap : 30px;
 }
 
-
+#star_score{
+	font-family: 'JUA';
+	font-size: 15px;
+}
 
 .foot{
 	bottom : 0;
