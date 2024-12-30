@@ -2,6 +2,7 @@ package vo;
 
 public class AcademyVO {
 	private int academy_idx, academy_longitude, academy_latitude;
+	private float rating;
 	private String academy_name, academy_phone, academy_content, academy_business, academy_profile, academy_address, academy_category, academy_region;
 	public int getAcademy_idx() {
 		return academy_idx;
@@ -69,8 +70,14 @@ public class AcademyVO {
 	public void setAcademy_region(String academy_region) {
 		this.academy_region = academy_region;
 	}
+	public float getRating() {
+		return rating;
+	}
+	public void setRating(float rating) {
+		this.rating = rating;
+	}
 	
-	
+
 	
 	
 	
