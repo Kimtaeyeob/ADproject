@@ -28,7 +28,7 @@
 	background-color: #ffffff;
 	width: 100%;
 	display: grid;
-	grid-template-columns : 210px 1300px 240px;
+	grid-template-columns : 210px 1465px 240px;
 	height: 120px; 
     transition: height 0.3s ease; 
 }
@@ -309,7 +309,7 @@ div.category_icon{
 	flex-direction: row;
 	align-items: center;
 	padding-bottom: 60px;
-	gap : 20px;
+	gap : 30px;
 }
 
 
@@ -332,10 +332,10 @@ a{
 
 .main{
 	margin-top : 200px;
-	margin-left : 100px;
-	margin-right : 77.5px;
+	margin-left : 115px;
+	margin-right : 85px;
 	display: grid;
-	grid-template-columns : 315px 315px 315px 315px 315px;
+	grid-template-columns : 350px 350px 350px 350px 350px;
    
 }
 
