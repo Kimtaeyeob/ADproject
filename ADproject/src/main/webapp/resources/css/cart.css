@@ -369,6 +369,16 @@ hr.border2 {
 	padding: 0;
 }
 
+.story{
+	
+margin-bottom: 20px;
+	
+	
+}
+
+
+
+
 hr.border2 {
   
   width: 100%; 
@@ -392,51 +402,8 @@ a{
 	color : #000000;
 }
 
-/* ------------------------------------------아래는 카트 위에는 마지막 부분 */
-#cart_order_btn {
-	background-color: #28a745; /* 버튼 배경색 (녹색) */
-	color: white; /* 텍스트 색상 */
-	font-size: 16px; /* 폰트 크기 */
-	font-weight: bold; /* 텍스트 굵기 */
-	padding: 15px 30px; /* 버튼 내부 여백 */
-	border: none; /* 테두리 제거 */
-	border-radius: 10px; /* 모서리 둥글게 */
-	cursor: pointer; /* 커서 변경 */
-	width:220px;
-}
+/* ------------------------------------------위에는 마지막 부분 */
 
-.cart_last5 {
-	padding-right: 60px;
-}
-
-.cart_last4 {
-	padding-right: 60px;
-}
-
-.cart_plus {
-	display: felx;
-	align-items: cneter;
-}
-
-.cart_minus {
-	display: felx;
-	align-items: cneter;
-}
-
-.cart_last2 {
-	font: bold;
-	font-weight: 20px;
-}
-
-.cart_last {
-	width: 100%;
-	padding-top: 10px;
-	padding-bottom: 25px;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center; /* 추가: 수평 중앙 정렬 */
-}
 /*--------------------------------------------위에는카트 내부 아래 부분 디자인  */
 .cart_body { /* 여기서 영역 넓힐수있음 */
 	width: 100%;
@@ -460,6 +427,7 @@ a{
 	cursor: pointer; /* 클릭 가능한 느낌 */
 }
 
+/*카트 바디 1  */
 .cart_body1 {
 	width: 40%;
 	border-bottom: 1px solid lightgray;
@@ -481,54 +449,10 @@ a{
 
 
 
-#cart_label_btn {
-	background: none; /* 배경 제거 */
-	border: none; /* 버튼 테두리 제거 */
-	padding: 0; /* 버튼 여백 제거 */
-	cursor: pointer; /* 클릭 가능한 느낌 */
-}
 
-#label_btn_info {
-	background-color: #fff;
-	padding-top: 12px;
-	padding-right: 37px;
-	padding-bottom: 15px;
-	padding-left: 15px;
-	display: none; /* 기본적으로 숨김 */
-	position: absolute; /* 레이아웃 고정 */
-	top: 40px; /* 부모 요소 기준 아래로 40px */
-	left: 0; /* 부모 요소 기준 왼쪽 정렬 */
-	background-color: #fff; /* 배경색 */
-	border: 1px solid lightgray; /* 테두리 추가 */
-	padding: 10px; /* 내부 여백 */
-	z-index: 10; /* 다른 요소 위로 표시 */
-}
 
-#cart_body_mid {
-	position: relative; /* 내부 요소 위치 고정 기준 */
-	margin-bottom: 10px;
-}
 
-#cart_body_btm {
-	width: 50px;
-	height: auto; /* 원본 비율 유지 */
-	display: inline-block; /* 텍스트와 동일 선상에 배치 */
-	vertical-align: middle; /* 텍스트와 수직 정렬 */
-	position: relative; /* 위치 고정 */
-	top: 0; /* 초기 위치 */
-}
-
-#cart_label {
-	display: inline-block;
-	padding: 5px 10px; /* 버튼 안 여백 */
-	border: 2px solid #00c73c; /* 테두리 색상 */
-	color: #00c73c; /* 글자 색상 */
-	font-size: 13px; /* 글자 크기 */
-	font-weight: bold; /* 글자 두께 */
-	text-align: center; /* 텍스트 가운데 정렬 */
-	background-color: #fff; /* 배경색 */
-}
-
+/*카트 바디 2 */
 .cart_body2 {
 	width: 30%;
 	background-color: #fff;
@@ -542,36 +466,7 @@ a{
 	align-items: center;
 }
 
-#cart_body2_head {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border-bottom: 1px solid gray;
-	align-items: center;
-	display: flex;
-}
-
-#cart_body2_mid {
-	padding-top: 10px;
-	padding-bottom: 12px;
-}
-
-#cart_body2_mid svg {
-	margin-left: 20px; /* 텍스트에서 SVG를 오른쪽으로 밀기 */
-	cursor: pointer; /* 클릭 가능한 느낌 */
-}
-
-#cart_body2_btn {
-	padding: 5px 10px; /* 버튼 크기 설정 */
-	font-size: 14px; /* 글자 크기 */
-	color: black; /* 글자 색상 */
-	border: 1px solid #ccc; /* 얇은 테두리 */
-	border-radius: 5px; /* 둥근 테두리 */
-	background-color: white; /* 배경 흰색 */
-	text-align: center; /* 텍스트 중앙 정렬 */
-	cursor: pointer; /* 클릭 가능한 마우스 포인터 */
-	display: flex;
-	align-items: center;
-}
+/* 카트 바디 3 */
 
 .cart_body3 {
 	width: 15%;
@@ -590,20 +485,7 @@ a{
 	border-top: 1px solid gray;
 }
 
-#cart_body3_btn {
-	display: inline-block;
-	padding: 5px 10px; /* 버튼 안 여백 */
-	border: 2px solid #00c73c; /* 테두리 색상 */
-	color: #00c73c; /* 글자 색상 */
-	font-size: 15px; /* 글자 크기 */
-	font-weight: bold; /* 글자 두께 */
-	text-align: center; /* 텍스트 가운데 정렬 */
-	background-color: #fff; /* 배경색 */
-	cursor: pointer; /* 포인터 커서 */
-	margin-left: auto;
-	border-radius: 8px;
-	margin-top: 10px;
-}
+
 
 .cart_body4 {
 	display: flex;
@@ -691,7 +573,7 @@ main {
 	width: 100%;
 	height: auto; /* 높이를 콘텐츠에 맞게 */
 	overflow: visible; /* 스크롤 제한 해제 */
-	padding-bottom: 100px; /* 내용 아래 공간 추가 */
+	
 }
 
 @font-face {
@@ -779,12 +661,12 @@ main {
 
 .naver_pay_btn {
 	border: none;
-	width: 100px;
+	width: 200px;
 	height: 40px;
-	border-radius: 7px;
-	background-color: #69C368;
+	border-radius: 40px;
+	background-color: #fff;
 	color: #000000;
-	font-size: 14px;
+	font-size: 20px;
 	font-family: 'JUA';
 	cursor: pointer;
 }
@@ -793,16 +675,6 @@ main {
 	transform: scale(0.95);
 }
 
-.naver_pay_btn2 {
-	border: none;
-	width: 150px;
-	height: 40px;
-	border-radius: 7px;
-	background-color: #69C368;
-	color: #000000;
-	font-size: 14px;
-	font-family: 'JUA';
-}
 
 .naver_pay_btn2:active {
 	transform: scale(0.95);
