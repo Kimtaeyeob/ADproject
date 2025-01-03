@@ -18,25 +18,20 @@
    <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
    
    <context:annotation-config/>
-   <!-- 
-   <context:component-scan base-package="com.kh.auto, dao, advice, com.kh.aop.service"/> -->
       
    <beans:bean class="com.kh.a.MainController">
       	<beans:property name="academy_dao"
 						ref = "Academy_daoBean"/>
    </beans:bean>
-   
-   
-   
+     
+ <beans:bean class="com.kh.a.BoardController">
+		<beans:property name="board_dao"
+		                ref="board_daoBean"/>
+	</beans:bean>
+	
+	<beans:bean class="com.kh.a.CommentController">
+		<beans:property name="comment_dao"
+						ref="comment_daoBean"/>
+	</beans:bean>
    
 </beans:beans>
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   

@@ -19,6 +19,7 @@
 	display: flex;
 	width: 100%;
 	flex-direction: column;
+	z-index: 1500;
 	
 }
 
@@ -28,7 +29,7 @@
 	background-color: #ffffff;
 	width: 100%;
 	display: grid;
-	grid-template-columns : 210px 1465px 240px;
+	grid-template-columns : 215px 1425px 275px;
 	height: 120px; 
     transition: height 0.3s ease; 
 }
@@ -38,7 +39,6 @@ div.category_icon{
 	width : 100%;
 	height : 50px;
 	border-top: 1px solid #f5f5f5;
-    border-bottom: 1px solid #f5f5f5;
 	background-color: #ffffff;
 	border-right : none;
 	border-left : none;
@@ -47,6 +47,7 @@ div.category_icon{
 	justify-content : center;
 	align-items: center;
 	gap : 60px;
+	box-shadow: 0px 5px 10px #f5f5f5;
 }
 
 .logo_img{
@@ -300,6 +301,7 @@ div.category_icon{
 	border : 3px solid #8c8c8c;
 	background-color: #ffffff;
 	font-family: 'JUA';
+	font-size: 20px;
 }
 
 .sub_nav{
@@ -310,7 +312,7 @@ div.category_icon{
 	flex-direction: row;
 	align-items: center;
 	padding-bottom: 60px;
-	gap : 30px;
+	gap : 20px;
 }
 
 #star_score{
@@ -336,16 +338,15 @@ a{
 
 .main{
 	margin-top : 200px;
-	margin-left : 115px;
-	margin-right : 85px;
+	margin-left : 112px;
 	display: grid;
-	grid-template-columns : 350px 350px 350px 350px 350px;
-   
+	grid-template-columns : 280px 280px 280px 280px 280px 280px;
+   	grid-template-rows: auto auto;
 }
 
 .academy_content{
 	padding : 8px;
-	widht : 300px;
+	widht : 280px;
 	height : 400px;
 	display: flex;
 	flex-direction: column;
@@ -373,6 +374,7 @@ a{
 	margin-top : 8px;
 	display: flex;
 	flex-direction: row;
+	gap : 5px;
 }
 
 .img_tag{
@@ -386,6 +388,39 @@ hr.border2 {
   border-top: 2px solid #f5f5f5; 
 }
 
-.category_icon{
-	border : 1px solid #000000;
+.wrap {
+    grid-column: 1 / span 6;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    overflow: hidden; /* 추가 */
+    z-index: 0;
+}
+
+.banner_line {
+    display: flex; /* 플렉스를 사용해 정렬 */
+    transition: transform 0.5s; /* 움직임 추가 가능 */
+    overflow: hidden; /* 넘치는 부분 숨김 */
+    width: max-content; /* 자식 요소의 너비에 맞게 조정 */
+    animation: banner-animation 30s linear infinite;
+}
+
+.banner_item {
+    flex-shrink: 0; /* 크기 줄어들지 않도록 설정 */
+    transition: 0.5s;
+}
+
+.banner_img {
+    width: 280px;
+    height: 150px;
+}
+
+keyframes banner-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-200px * 10 - 10px * 10));
+  }
 }

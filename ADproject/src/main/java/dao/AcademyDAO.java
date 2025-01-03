@@ -21,4 +21,10 @@ public class AcademyDAO {
 		return list;
 	}
 	
+	public AcademyVO select_one( int academy_idx ){
+
+		AcademyVO vo = sqlSession.selectOne("a.academy_list_one", academy_idx);
+		
+		return vo;
+	}
 }

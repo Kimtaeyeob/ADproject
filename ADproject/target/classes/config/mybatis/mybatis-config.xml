@@ -9,11 +9,16 @@
 	</settings>
 	
 	<typeAliases>
-	 <typeAlias type="vo.AcademyVO" alias = "aca" />
+	 	<typeAlias type="vo.AcademyVO" alias = "aca" />
+	 	<typeAlias type="vo.BoardVO" alias="board"/>
+		<typeAlias type="vo.CommentVO" alias="comm"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="config/mybatis/mapper/academy.xml" />
+		<mapper resource="config/mybatis/mapper/schedule.xml" />
+		<mapper resource="config/mybatis/mapper/board.xml" />
+		<mapper resource="config/mybatis/mapper/comment.xml" />
 	</mappers>
 </configuration>
 
