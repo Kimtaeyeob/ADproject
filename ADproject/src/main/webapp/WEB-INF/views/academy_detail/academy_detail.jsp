@@ -63,17 +63,28 @@
 				</div>
 			</div>
 	</div>
-	 
-	<div class = "content">
-		<span class = "title_line1">${ vo.academy_name }</span>
-		<span class = "title_line1">${ vo.academy_phone }</span>
-		<span class = "title_line1">${ vo.academy_category }</span>
-	</div>
 	
 	
-	
-	<div class = "academy_content">
-		<span class = "title_line1">${ vo.academy_content }</span>
+	<div class = "box">
+		<div class = "con">
+			<div class = "content">
+				<span class = "title_line1">${ vo.academy_name }</span>
+				<span class = "title_line1">${ vo.academy_phone }</span>
+				<span class = "title_line1">${ vo.academy_category }</span>
+			</div>
+			
+			
+			
+			<div class = "academy_content">
+				<span class = "title_line1">${ vo.academy_content }</span>
+			</div>
+		</div>
+		
+		<div class = "cash">
+			<div class = "cash_window">결제창이와요 하와와</div>
+		
+		
+		</div>
 	</div>
 	
 	<div class = "academy_teacher">

@@ -9,6 +9,7 @@ public class Common {
 	public static class login{
 		public static final String VIEW_PATH = "/WEB-INF/views/login/";
 	}
+
 	
 	public static class academy_detail{
 		public static final String VIEW_PATH = "/WEB-INF/views/academy_detail/";
@@ -39,7 +40,13 @@ public class Common {
 			//<- 1 2 3 ->
 			public final static int BLOCKPAGE = 3;
 		}
+		public static class cart{
+			public static final String VIEW_PATH = "/WEB-INF/views/cart/";
+		}
 
 	}
+
+
+
 
 

@@ -29,7 +29,7 @@
 	background-color: #ffffff;
 	width: 100%;
 	display: grid;
-	grid-template-columns : 215px 1425px 275px;
+	grid-template-columns : 240px 1400px 290px;
 	height: 120px; 
     transition: height 0.3s ease; 
 }
@@ -46,12 +46,12 @@ div.category_icon{
 	flex-direction: row;
 	justify-content : center;
 	align-items: center;
-	gap : 60px;
+	gap : 80px;
 	box-shadow: 0px 5px 10px #f5f5f5;
 }
 
 .logo_img{
-	margin-left : 10px;
+	margin-left : 18px;
 }
 
 .search_bar{
@@ -305,14 +305,20 @@ div.category_icon{
 }
 
 .sub_nav{
-	
 	padding : 0;
 	widows : 300px;
 	display : flex;
 	flex-direction: row;
 	align-items: center;
 	padding-bottom: 60px;
-	gap : 20px;
+	gap : 15px;
+	
+	
+}
+
+.cart_icon, .button_design2 {
+    cursor: pointer; /* 버튼 클릭하면 클릭 반응하는 버튼 디자인 함 */
+
 }
 
 #star_score{

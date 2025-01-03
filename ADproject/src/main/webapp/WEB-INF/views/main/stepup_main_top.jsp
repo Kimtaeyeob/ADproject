@@ -237,7 +237,7 @@
 
 			<div class="sub_nav">
 				<i class="fa-solid fa-message fa-2xl" class ="board_icon" onclick ="location.href='list.do'"></i>
-				<i class="fa-solid fa-cart-shopping fa-2xl" class="cart_icon"></i>
+				<i class="fa-solid fa-cart-shopping fa-2xl" class="cart_icon" onclick = "location.href='cart_page.do'"></i>
 				 <input type="button" value="로그인" class="button_design2"
 					onclick="location.href='login_page.do'">
 			</div>
@@ -245,15 +245,16 @@
 		</div>
 
 		<div class="category_icon">
-			<i class="fa-solid fa-person-swimming fa-2xl"></i> <i
-				class="fa-solid fa-futbol fa-2xl"></i> <i
-				class="fa-solid fa-baseball fa-2xl"></i> <i
-				class="fa-solid fa-square-root-variable fa-2xl"></i> <i
-				class="fa-solid fa-e fa-2xl"></i> <i
-				class="fa-solid fa-book-bookmark fa-2xl"></i> <i
-				class="fa-solid fa-eye fa-2xl"></i> <i
-				class="fa-solid fa-school-flag fa-2xl"></i> <i
-				class="fa-solid fa-notes-medical fa-2xl"></i>
+			<i class="fa-solid fa-person-swimming fa-2xl"></i> 
+			<i class="fa-solid fa-futbol fa-2xl"></i> 
+			<i class="fa-solid fa-baseball fa-2xl"></i>
+			<i class="fa-solid fa-square-root-variable fa-2xl"></i>
+			<i class="fa-solid fa-e fa-2xl"></i>
+			<i class="fa-solid fa-book-bookmark fa-2xl"></i> 
+			<i class="fa-solid fa-eye fa-2xl"></i> 
+			<i class="fa-solid fa-school-flag fa-2xl"></i> 
+			<i class="fa-solid fa-notes-medical fa-2xl"></i>
+			<i class="fa-brands fa-instagram fa-2xl"></i>
 		</div>
 	</div>
 

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>StepUp Main</title>
@@ -12,3 +13,4 @@
     <jsp:include page="stepup_main_bottom.jsp" flush="true" />
 </body>
 </html>
+

@@ -59,6 +59,7 @@ public class MainController {
 		return common.Common.login.VIEW_PATH + "member_join_page.jsp";
 	}
 	
+
 	@RequestMapping("academy_detail.do")
 	public String academy_detail_page ( Model model, int academy_idx ) {
 		
@@ -88,6 +89,22 @@ public class MainController {
         
         
 		return common.Common.academy_detail.VIEW_PATH + "academy_detail.jsp";
+	}
+
+
+	@RequestMapping("cart_page.do")
+	public String cart_page() {
+		
+		return common.Common.cart.VIEW_PATH +"cart.jsp";
+		
+	}
+	
+	
+	@RequestMapping("check_out.do")
+	public String checkout() {
+		
+		return common.Common.cart.VIEW_PATH +"check_out.jsp";
+		
 	}
 
 }
