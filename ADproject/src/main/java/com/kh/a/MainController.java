@@ -2,6 +2,7 @@ package com.kh.a;
 
 import java.util.List;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -54,6 +55,24 @@ public class MainController {
 	public String member_join_page() {
 		return common.Common.login.VIEW_PATH + "member_join_page.jsp";
 	}
+	
+	 @RequestMapping("/terms.do")
+	    public String termsPage(Model model) {
+	        model.addAttribute("termsTitle", "이용약관");
+	        model.addAttribute("siteName", "StepUp");
+	        return common.Common.main.VIEW_PATH +"terms.jsp";
+	    }
+
+	    @RequestMapping("/privacy-policy.do")
+	    public String privacyPolicyPage() {
+	        return common.Common.main.VIEW_PATH + "privacy-policy.jsp"; // "privacy-policy.jsp" 뷰로 이동
+	    }
+	    
+	    @RequestMapping("/support.do")
+	    public String supportPage() {
+	        return common.Common.main.VIEW_PATH + "support.jsp"; 
+	    }
+	
 }
 
 
