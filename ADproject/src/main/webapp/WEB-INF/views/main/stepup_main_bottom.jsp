@@ -14,9 +14,13 @@
 
 	<footer>
 		<div class="foot">
-			<a href="#">스텝업 이용약관</a> <a href="#">개인정보 처리방침</a> <a href="#">스텝업
-				라운지</a> <a href="#">스텝업 고객센터</a> <a href="#"><i
-				class="fa-regular fa-copyright"></i>SETPUP Corp.</a>
+			<div class="foot">
+        <a href="terms.do">스텝업 이용약관</a>
+        <a href="privacy-policy.do">개인정보 처리방침</a>
+        <a href="academy_detail.do">스텝업 라운지</a>
+        <a href="support.do">스텝업 고객센터</a>
+        <a href="#"><i class="fa-regular fa-copyright"></i>STEPUP Corp.</a>
+    </div>
 		</div>
 	</footer>
 </body>

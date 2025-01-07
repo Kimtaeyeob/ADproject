@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <head>
     <meta charset="UTF-8">
@@ -16,8 +17,11 @@
 </html>
 
 =======
+=======
+>>>>>>> branch 'master' of https://github.com/Kimtaeyeob/ADproject.git
 	<head>
 		<meta charset="UTF-8">
+<<<<<<< HEAD
 		<title>Insert title here</title>
 		<link rel="stylesheet" href="/a/resources/css/main.css">
 		<script src="https://kit.fontawesome.com/86028631f0.js" crossorigin="anonymous"></script>
@@ -312,4 +316,19 @@
 
 	</body>
 </html>
+>>>>>>> branch 'master' of https://github.com/Kimtaeyeob/ADproject.git
+=======
+    	<title>StepUp Main</title>
+    		<link rel="stylesheet" href="/a/resources/css/main.css">
+			<script src="https://kit.fontawesome.com/86028631f0.js" crossorigin="anonymous"></script>
+    
+	</head>
+	<body>
+	    <jsp:include page="stepup_main_top.jsp" flush="true" />
+	    <jsp:include page="stepup_main_content.jsp" flush="true" />
+	    <jsp:include page="stepup_main_bottom.jsp" flush="true" />
+	</body>
+</html>
+
+
 >>>>>>> branch 'master' of https://github.com/Kimtaeyeob/ADproject.git

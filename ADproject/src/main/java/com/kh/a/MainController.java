@@ -51,26 +51,27 @@ public class MainController {
 	}
 
 
+
 	@RequestMapping("academy_detail.do")
 	public String academy_detail_page ( Model model, int academy_idx ) {
+
 
 	 @RequestMapping("terms.do")
 	    public String termsPage(Model model) {
 	        model.addAttribute("termsTitle", "이용약관");
 	        model.addAttribute("siteName", "StepUp");
-	        return common.Common.main.VIEW_PATH +"terms.jsp";
+	        return common.Common.terms.VIEW_PATH +"terms.jsp";
 	    }
 
 	    @RequestMapping("privacy-policy.do")
 	    public String privacyPolicyPage() {
-	        return common.Common.main.VIEW_PATH + "privacy-policy.jsp"; // "privacy-policy.jsp" 뷰로 이동
+	        return common.Common.terms.VIEW_PATH + "privacy-policy.jsp"; 
 	    }
 	    
 	    @RequestMapping("support.do")
 	    public String supportPage() {
-	        return common.Common.main.VIEW_PATH + "support.jsp"; 
+	        return common.Common.terms.VIEW_PATH + "support.jsp"; 
 	    }
-	}
 
 	@RequestMapping("cart_page.do")
 	public String cart_page(Model model) {
@@ -104,6 +105,14 @@ public class MainController {
 		return common.Common.academy_detail.VIEW_PATH + "academy_detail.jsp";
 	}
 
+
+	@RequestMapping("cart_page.do")
+	public String cart_page() {
+		
+		return common.Common.cart.VIEW_PATH +"cart.jsp";
+		
+	}
+
 	
 
 
@@ -119,6 +128,7 @@ public class MainController {
 		return common.Common.cart.VIEW_PATH +"check_out.jsp";
 		
 	}
+
 }
 
 

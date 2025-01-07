@@ -15,6 +15,10 @@ public class Common {
 		public static final String VIEW_PATH = "/WEB-INF/views/academy_detail/";
 	}
 	
+	public static class terms{
+		public static final String VIEW_PATH = "/WEB-INF/views/terms/";
+	}
+	
 	//일반게시판
 		public static class Board{
 			

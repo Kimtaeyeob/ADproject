@@ -7,9 +7,18 @@
 	<bean id="Academy_daoBean" class="dao.AcademyDAO">
 		<property name="sqlSession" ref="sqlSessionBean" />
 	</bean>
+<<<<<<< HEAD
 
 
 	<bean id="schedule_dao_bean" class="dao.ScheduleDAO">
+=======
+	
+
+	
+	
+
+	  <bean id="schedule_dao_bean" class="dao.ScheduleDAO">
+>>>>>>> branch 'master' of https://github.com/Kimtaeyeob/ADproject.git
 		<constructor-arg ref="sqlSessionBean" />
 	</bean>
 
@@ -25,9 +34,13 @@
 		<property name="sqlSession" ref="sqlSessionBean" />
 	</bean>
 
+<<<<<<< HEAD
 
 
 
+=======
+	
+>>>>>>> branch 'master' of https://github.com/Kimtaeyeob/ADproject.git
 </beans>
 
 

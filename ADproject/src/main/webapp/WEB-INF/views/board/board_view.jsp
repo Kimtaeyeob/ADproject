@@ -10,6 +10,7 @@
 		<title>Insert title here</title>
 		
 		<script src="/a/resources/js/httpRequest.js"></script>
+	
 		
 		<script>
 		
@@ -145,111 +146,183 @@
 		</script>
 		
 		<style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f9f9f9;
-                color: #333;
-            }
+    @charset "UTF-8";
 
-            header {
-                background-color: #343a40;
-                color: #fff;
-                padding: 15px 20px;
-                text-align: center;
-            }
+    /* 전체 초기화 */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-            main {
-                display: flex;
-                flex-direction: column;	
-                align-items: center;
-                padding: 20px;
-            }
+    /* 폰트 */
+    @font-face {
+        font-family: 'JUA';
+        src: url("/a/resources/font/JUA.ttf") format('truetype');
+    }
 
-            footer {
-                text-align: center;
-                background-color: #343a40;
-                color: white;
-                padding: 10px 0;
-                margin-top: 20px;
-            }
+    body {
+        font-family: 'JUA', sans-serif;
+        background-color: #f3f4f6;
+        color: #333;
+        line-height: 1.8;
+    }
 
-            table {
-                width: 80%;
-                max-width: 800px;
-                margin: 20px auto;
-                border-collapse: collapse;
-                background: white;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                border-radius: 30px;
-                border:none;
-            }
+    header {
+        background-color: #0B0C0D;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 26px;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
 
-            th, td {
-                padding: 10px;
-                text-align: left;
-                border-bottom: 1px solid #ddd;
-                border:none;
-            }
+    main {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
 
-            th {
-                background-color: #495057;
-                color: white;
-            }
+    footer {
+        background-color: #0B0C0D;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 30px;
+        border-radius: 20px 20px 0 0;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
 
-            .button-container {
-                display: flex;
-                justify-content: space-between;
-                width: 80%;
-                max-width: 800px;
-                margin: 20px 0;
-            }
+    footer:hover {
+        background-color: #333;
+        color: #ddd;
+        transform: scale(1.02);
+    }
 
-            .button-container input {
-                padding: 10px 20px;
-                font-size: 16px;
-                border: none;
-                border-radius: 5px;
-                background-color: #007bff;
-                color: white;
-                cursor: pointer;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                transition: background-color 0.3s;
-            }
+    table {
+        width: 90%;
+        max-width: 900px;
+        border-collapse: separate;
+        border-spacing: 0;
+        background: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+        animation: fadeIn 0.5s ease-in-out;
+    }
 
-            .button-container input:hover {
-                background-color: #0056b3;
-            }
+    th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+        font-size: 16px;
+    }
 
-            #comment_form table {
-                width: 600px;
-                margin: 20px 0;
-                background: #fff;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                border-radius: 10px;
-            }
+    th {
+        background-color: #0B0C0D;
+        color: white;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
 
-            #comment_form th {
-                background-color: #495057;
-                color: white;
-            }
+    tr:last-child td {
+        border-bottom: none;
+    }
 
-            #comment_form td {
-                padding: 10px;
-            }
+    input[type="text"], textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        font-size: 14px;
+        background-color: #f9fafb;
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
 
-            #comment_form textarea {
-                width: 100%;
-                resize: vertical;
-            }
+    input[type="text"]:focus, textarea:focus {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-color: #0B0C0D;
+        outline: none;
+    }
 
-            #comment_disp {
-                width: 80%;
-                max-width: 800px;
-                margin: 20px auto;
-            }
-        </style>
+    textarea {
+        resize: none;
+    }
+
+    .button-container img {
+        cursor: pointer;
+        margin-left: 15px;
+        transition: transform 0.2s ease, opacity 0.3s ease;
+        border-radius: 10px;
+    }
+
+    .button-container img:hover {
+        transform: scale(1.1);
+        opacity: 0.85;
+    }
+
+    .comment-section {
+        width: 90%;
+        max-width: 900px;
+        margin: 20px 0;
+        padding: 20px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        animation: slideUp 0.5s ease-in-out;
+    }
+
+    #comment_disp {
+        margin-top: 20px;
+    }
+
+    input[type="button"] {
+        background-color: #0B0C0D;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 12px;
+        font-family: 'JUA';
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    input[type="button"]:hover {
+        background-color: #333;
+        transform: scale(1.05);
+    }
+
+    /* 애니메이션 효과 */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+</style>
+		
 		
 	</head>
 	

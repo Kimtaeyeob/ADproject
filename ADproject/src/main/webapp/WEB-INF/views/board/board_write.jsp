@@ -1,146 +1,185 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>새 글 작성하기</title>
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f9f9f9;
-        color: #333;
-    }
+    <style>
+        @charset "UTF-8";
 
-    header {
-        background-color: #343a40;
-        color: #fff;
-        padding: 15px 20px;
-        text-align: center;
-    }
+        /* 기본 설정 */
+        body {
+            font-family: 'JUA', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #0B0C0D;
+            line-height: 1.6;
+        }
 
-    main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
+        header {
+            background-color: #0B0C0D;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
 
-    footer {
-        text-align: center;
-        background-color: #343a40;
-        color: white;
-        padding: 10px 0;
-        margin-top: 20px;
-    }
+        form {
+            width: 90%;
+            max-width: 700px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
 
-    table {
-        width: 80%;
-        max-width: 800px;
-        margin: 20px auto;
-        border-collapse: collapse;
-        background: white;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-    th, td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
+        th, td {
+            padding: 15px;
+            font-size: 16px;
+        }
 
-    th {
-        background-color: #495057;
-        color: white;
-    }
+        th {
+            text-align: left;
+            color: #fff;
+            background-color: #0B0C0D;
+            border-radius: 10px 0 0 10px;
+        }
 
-    .button-container {
-        display: flex;
-        justify-content: flex-end;
-        width: 80%;
-        max-width: 800px;
-        margin: 20px auto;
-    }
+        td {
+            background-color: #f9f9f9;
+            border-radius: 0 10px 10px 0;
+        }
 
-    .button-container img {
-        margin: 0 10px;
-        cursor: pointer;
-    }
+        input, textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background-color: #f3f4f6;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    input, textarea {
-        width: 95%;
-        padding: 10px;
-        font-size: 14px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
+        input:focus, textarea:focus {
+            border-color: #0B0C0D;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            outline: none;
+        }
 
-    textarea {
-        resize: none;
-    }
-</style>
+        textarea {
+            resize: none;
+        }
 
-<script>
-	function send_check() {
-		let f = document.f;
+        .button-container {
+            text-align: right;
+            margin-top: 20px;
+        }
 
-		if (f.board_subject.value === '') {
-			alert("제목을 입력하세요");
-			return;
-		}
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: 'JUA', sans-serif;
+            color: #fff;
+            background-color: #0B0C0D;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
 
-		if (f.board_content.value === '') {
-			alert("내용을 입력하세요");
-			return;
-		}
+        .button-container button:hover {
+            background-color: #333;
+            transform: scale(1.05);
+        }
 
-		f.method = "post";
-		f.action = "insert.do";
-		f.submit();
+        footer {
+            background-color: #0B0C0D;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+            font-size: 14px;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+        }
 
-	}
-</script>
+        footer:hover {
+            background-color: #333;
+            color: #ddd;
+            transform: scale(1.02);
+        }
+    </style>
+
+    <script>
+        function send_check() {
+            let f = document.f;
+
+            if (f.board_subject.value === '') {
+                alert("제목을 입력하세요");
+                return;
+            }
+
+            if (f.board_content.value === '') {
+                alert("내용을 입력하세요");
+                return;
+            }
+
+            f.method = "post";
+            f.action = "insert.do";
+            f.submit();
+        }
+    </script>
 
 </head>
 
 <body>
 <header>
-		<h1>새 글 작성하기</h1>
+    <h1>새 글 작성하기</h1>
 </header>
 
-	<form name="f">
-		<table width="700">
+<form name="f">
+    <table>
+        <tr>
+            <th>제목</th>
+            <td><input type="text" name="board_subject" placeholder="제목을 입력하세요"></td>
+        </tr>
+        <tr>
+            <th>작성자</th>
+            <td><input type="text" name="board_name" placeholder="이름을 입력하세요"></td>
+        </tr>
+        <tr>
+            <th>내용</th>
+            <td><textarea name="board_content" rows="10" placeholder="내용을 입력하세요"></textarea></td>
+        </tr>
+    </table>
 
-			<tr>
-				<th width="120">제목</th>
-				<td><input name="board_subject" placeholder="제목을 입력하세요"></td>
-			</tr>
-			
-			<tr>
-					<th width="120">작성자</th>
-					<td><input name="board_name" placeholder="이름을 입력하세요"></td>
-				</tr>
-				
-				<th width="120">내용</th>
-				<td><textarea rows="10" name="board_content" placeholder="내용을 입력하세요"></textarea></td>
-			</tr>
+    <div class="button-container">
+        <button type="button" onclick="send_check();">등록</button>
+        <button type="button" onclick="history.back();">취소</button>
+    </div>
+</form>
 
-			<tr>
-				<td colspan="5" style="text-align: right;">
-				<img src="/a/resources/img/btn_reg.gif" onclick="send_check();">
-				<img src="/a/resources/img/btn_back.gif" onclick="history.back()">
-				</td>
-			</tr>
-		</table>
-	</form>
-	
 <footer>
-        <p>메인으로 돌아가기</p>
- </footer>
+    메인으로 돌아가기
+</footer>
 </body>
 </html>
