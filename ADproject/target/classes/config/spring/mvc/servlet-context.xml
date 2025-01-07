@@ -33,5 +33,10 @@
 		<beans:property name="comment_dao"
 						ref="comment_daoBean"/>
 	</beans:bean>
+	
+	<beans:bean class="com.kh.a.LoginController">
+		<beans:property name="logindao"
+						ref = "Login_daoBean"/>
+	</beans:bean>
    
 </beans:beans>

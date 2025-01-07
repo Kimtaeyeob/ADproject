@@ -4,55 +4,47 @@
 	padding: 0;
 }
 
-body {
+.login_form{
+	width: 610px;
+	height: 650px;
+	margin: 0 auto;
+	margin-top : 100px;
+	border : 1px solid #000000;
+	display: flex;
+	flex-direction: column;
+	gap : 10px;
+}
+
+.login_form1{
+	padding : 0;
+	width: 610px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	gap : 60px;
+	
+}
+
+.logoicon{
 	text-align: center;
 }
 
-.join_form{
-	display: flex;
-	flex-direction: column;
+.input_form_box{
+	width: 610px;
+	height: 120px;
 }
 
-.member_infor{
-	display: flex;
-	flex-direction: column;
+.input_form{
+	width: 610px;
+	height: 40px;
 }
 
-.personal_infor{
-	display: flex;
-	flex-direction: column;
+.input_form_box1{
+	width: 610px;
+	height: 160px;
 }
 
-
-
-.telecom_drop_btn{
-	width : 250px;
-	dispaly : block;
-	text-align: left;
-	cursor : pointer;
-	z-index : 1;
-	position: relative;
+.g_button{
+	margin-top: 30px;
+	
 }
-
-.telecom_company_content{
-	display : none;
-	 background-color: #fcfcfc;
-  min-width : 240px;
-  border-radius: 8px;
-  height : 160px;
-}
-
-.telecom_category{
-	display: flex;
-	flex-direction: row;
-	gap: 5px;
-}
-
-telecom_company_content div{
-	display : block;
-}
-
-.telecom_company_content.show{
-	display : block;
-}
-

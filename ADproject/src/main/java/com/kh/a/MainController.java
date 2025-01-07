@@ -18,12 +18,6 @@ import vo.ScheduleVO;
 @Controller
 public class MainController {
 	
-	@Autowired
-	HttpSession session;
-	
-	@Autowired
-	HttpServletRequest request;
-	
 	
 	@Autowired
 	private AcademyDAO academy_dao;

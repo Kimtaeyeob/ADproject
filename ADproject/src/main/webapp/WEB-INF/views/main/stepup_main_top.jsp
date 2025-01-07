@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -172,15 +175,25 @@
 		        }
 		       
 		       
-		    });   
+		    });    
 		});
+		
+		function member_drop(){
+			 const memberInfo = document.querySelector('.member_info');
+		        if (memberInfo.style.display === 'none' || memberInfo.style.display === '') {
+		            memberInfo.style.display = 'flex'; 
+		        } else {
+		            memberInfo.style.display = 'none';
+		        }
+		}
+		
 		</script>
 		
 </head>
 <body>
 <div class="head_line">
 		<div class="head">
-			<a href="/a/mainhome.do"><img src="/a/resources/img/b_logo.png"
+			<a href="mainhome.do"><img src="/a/resources/img/b_logo.png"
 				class="logo_img" style="width: 150px; height: 75px;"></a>
 			<div class="search_bar">
 				<div class="button_search" id="category_button">
@@ -238,10 +251,21 @@
 			<div class="sub_nav">
 				<i class="fa-solid fa-message fa-2xl" class ="board_icon" onclick ="location.href='list.do'"></i>
 				<i class="fa-solid fa-cart-shopping fa-2xl" class="cart_icon" onclick = "location.href='cart_page.do'"></i>
+				 
+				 <c:if test = "${member eq null}">
 				 <input type="button" value="로그인" class="button_design2"
 					onclick="location.href='login_page.do'">
-			</div>
-
+				</c:if>
+				<c:if test="${member ne null}">
+				<input type="button" value="${ member.stepup_id }" class="button_design2" onclick = "member_drop();">
+				<div class = "member_info">
+					<a href = "member_info.do?stepup_id=${ sessionScope.stepup_id }" class = "member_ship">내정보</a>
+					<a href = "#" class = "member_ship">수강내역</a>
+					<a href = "logout.do" class = "member_ship">로그아웃</a>
+				</div>
+				</c:if>
+			</div> 
+ 
 		</div>
 
 		<div class="category_icon">
