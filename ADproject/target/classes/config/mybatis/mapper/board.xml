@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="b">
+
+	<!-- 전체 게시글 조회 -->
+	<select id="board_list"
+			resultType="board"
+			parameterType="java.util.Map">
+	
+		SELECT *
+FROM (
+    SELECT RANK() OVER (ORDER BY board_regdate DESC, board_idx ASC) AS no, b.*
+    FROM (
+        SELECT *
+        FROM board
+        <trim prefix="WHERE" prefixOverrides="OR|AND">
+            <if test="board_name != null">
+                board_name LIKE '%' || #{board_name} || '%'
+            </if>
+            
+            <if test="board_subject != null">
+                OR board_subject LIKE '%' || #{board_subject} || '%'
+            </if>
+            
+            <if test="board_content != null">
+                OR board_content LIKE '%' || #{board_content} || '%'
+            </if>
+        </trim>
+    ) b
+) 
+WHERE no BETWEEN #{start} AND #{end}
+	
+	</select>
+	
+	<!-- 새 글 작성 -->
+	<insert id="board_insert"
+		    parameterType="board">
+	
+		insert into BOARD values(
+				seq_board_idx.nextVal,
+				0,
+				0,
+				#{board_name},
+				#{board_subject}, 
+				#{board_content},  
+				#{board_ip},
+				sysdate,
+				0,
+				0 )	
+	</insert>
+	
+	<!-- 상세보기를 위해 게시글 한 건 조회 -->
+	<select id="board_one"
+	  		parameterType="int"
+	  		resultType="board">
+	
+		select * from board where board_idx = #{board_idx}
+	
+	</select>
+	
+	<update id="board_update" parameterType="board">
+	update board set board_name=#{board_name}, board_subject=#{board_subject}, board_content=#{board_content}, board_ip=#{board_ip} 
+	where board_idx=#{board_idx}
+	</update>
+	
+	<!-- 조회수 증가 -->
+	<update id="board_update_readhit"
+	        parameterType="int">
+	
+		update board set board_readhit = board_readhit + 1
+		where board_idx=#{board_idx}
+	
+	</update>
+	
+	<!-- 삭제 된것처럼 수정 -->
+	<update id="board_del_update">
+		update board set board_del_info = -1
+		where board_idx=#{board_idx}
+	</update>
+	
+	<!-- 전체 게시글 수 -->
+	<select id="board_count"
+	        resultType="int"
+	        parameterType="java.util.Map">
+	        
+		select COUNT(*) from board
+		
+		<!-- 마이바티스 동적쿼리 : 상황에 따라 필요한 sql문을 골라서 쓸 수 있도록 한다 -->
+		<trim prefix="where" prefixOverrides="or|and">
+		
+			<if test="board_name != null">
+			board_name like '%' || #{ board_name } || '%'
+			</if>
+			
+			<if test="board_subject != null">
+			or board_subject like '%' || #{ board_subject } || '%'
+			</if>
+			
+			<if test="board_content != null">
+			or board_content like '%' || #{ board_content } || '%'
+			</if>
+		
+		</trim>
+		
+	</select>
+	
+</mapper>
