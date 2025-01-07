@@ -9,4 +9,7 @@ public class Common {
 	public static class login{
 		public static final String VIEW_PATH = "/WEB-INF/views/login/";
 	}
+	public static class cart{
+		public static final String VIEW_PATH = "/WEB-INF/views/cart/";
+	}
 }

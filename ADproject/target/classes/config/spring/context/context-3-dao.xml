@@ -7,7 +7,9 @@
 	<bean id="Academy_daoBean" class="dao.AcademyDAO">
 		<property name="sqlSession" ref="sqlSessionBean" />
 	</bean>
-
+	
+	
+	
 	
 </beans>
 

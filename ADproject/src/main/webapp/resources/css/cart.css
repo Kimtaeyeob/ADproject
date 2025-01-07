@@ -1,0 +1,712 @@
+@charset "UTF-8";\
+/* 전체 영역 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* 폰트 */
+@font-face {
+    font-family: 'JUA';
+    src: url("/a/resources/font/JUA.ttf") format('truetype');
+}
+
+.head_line{
+	position: fixed;
+	top : 0;
+	left : 0;
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	
+}
+
+.head{
+	padding-top : 15px;
+	position :relative;
+	background-color: #ffffff;
+	width: 100%;
+	display: grid;
+	grid-template-columns : 210px 1465px 240px;
+	height: 120px; 
+    transition: height 0.3s ease; 
+}
+
+div.category_icon{
+	position: relative;
+	width : 100%;
+	height : 50px;
+	border-top: 1px solid #f5f5f5;
+    border-bottom: 1px solid #f5f5f5;
+	background-color: #ffffff;
+	border-right : none;
+	border-left : none;
+	display: flex;
+	flex-direction: row;
+	justify-content : center;
+	align-items: center;
+	gap : 60px;
+}
+
+.logo_img{
+	margin-left : 10px;
+}
+
+.search_bar{
+	height : 60%;
+	width : 900px;
+	border : 1px solid #f5f5f5;
+	border-radius: 40px;
+	display : flex;
+	flex-direction: row;
+	gap : 10px;
+	margin: 0 auto;
+	box-shadow: 0px 10px 10px #f5f5f5;
+	transition: flex-grow 0.6s ease, padding 0.6s ease;
+}
+
+
+
+.button_search{
+	padding-top : 12px;
+	padding-bottom : 9px;
+	padding-left: 30px;
+	flex-grow : 1;
+	border-radius : 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	transition: flex-grow 0.3s ease, padding 0.3s ease;
+}
+
+#academy_button{
+	margin-right : 10px;
+	flex-grow : 1.2;
+	border-radius : 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content : center;
+	position: relative;
+	transition: flex-grow 0.3s ease, padding 0.3s ease;
+	
+}
+
+.academy_tag{
+	width : 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.label{
+	font-size: 24px; 
+    font-family: 'JUA';
+}
+
+.label1{
+	font-size: 24px;
+    font-family: 'JUA';
+    color: #ffffff;
+}
+
+#icon{
+	width: 100px;
+	height: 50px;
+	margin-top: 5px;
+	display: flex;
+	justify-content: center;
+	
+}
+
+#category_button:hover {
+    background-color: #f5f5f5; 
+}
+
+#category_button:hover .search_input {
+    background-color: inherit;
+}
+
+#category_button.hover-r {
+    background-color: #ffffff;
+}
+
+#region_button:hover{
+	background-color: #f5f5f5; 
+}
+
+#region_button:hover .search_input{
+	background-color: inherit; 
+}
+
+#region_button.hover-r:hover{
+	background-color: #ffffff;
+}
+
+#academy_button:hover{
+	background-color: #f5f5f5; 
+}
+
+#academy_button:hover .search_input{
+	background-color: inherit; 
+}
+
+#academy_button.hover-r:hover{
+	background-color: #ffffff;
+}
+
+.search_input{
+	padding : 0;
+	height : 24px;
+	width: 100%;
+	border : none;
+	display: block; /* 항상 렌더링 */
+    transition: opacity 0.3s ease; /* 부드럽게 보이기 */
+}
+
+.search_input:focus {
+    outline : none;
+}
+
+.search_input::placeholder{
+	font-size: 16px;
+	font-family: 'JUA';
+	line-height : 12px;
+}
+
+.icon_button{
+	margin : 0;
+	padding : 0;
+	display: flex;
+	align-items : center;
+    justify-content: center;  
+	width: 100px;
+	height: 60px;
+	gap : 10px;
+	border-radius : 60px;
+	background-color: #000000;
+	transition: width 0.5s ease, background-color 0.5s ease;
+	
+}
+
+#glass_icon{
+	font-size : 25px;
+	color: #ffffff;	
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+
+.category_box{
+	padding : 20px;
+	padding-top : 5px;
+	display : none;
+	margin-top : 90px;
+	border-radius : 30px;
+	position : absolute;
+	left : 420px;
+	width : 350px;
+	height: 350px;
+	border : 2px solid #f5f5f5;
+	background-color : #ffffff;
+	z-index: 1000;
+	
+}
+
+.category_box.show {
+    display: block;
+    animation: slideDown 0.3s ease forwards;
+}
+
+.category_box.hide {
+    animation: slideUp 0.3s ease forwards;
+    animation-fill-mode: forwards; /* 유지 */
+}
+
+.region_box{
+	padding : 20px;
+	padding-top : 5px;
+	display : none;
+	margin-top : 90px;
+	border-radius : 30px;
+	position : absolute;
+	left : 680px;
+	width : 350px;
+	height: 350px;
+	border : 2px solid #f5f5f5;
+	background-color : #ffffff;
+	z-index: 1000;
+}
+
+.region_box.show {
+    display: block;
+    animation: slideDown 0.3s ease forwards;
+}
+
+.region_box.hide {
+    animation: slideUp 0.3s ease forwards;
+    animation-fill-mode: forwards; /* 유지 */
+}
+
+.button_design{
+	width : 100px;
+	height : 50px;
+	border-radius: 40px;
+	border : 3px solid #8c8c8c;
+	background-color: #ffffff;
+}
+
+.button_design:hover{
+	outline: 2px solid #000000;
+}
+
+
+.subject{
+	display: flex;
+    flex-wrap: wrap; /* 가로 공간이 부족하면 줄바꿈 */
+    justify-content: space-between; /* 버튼 간격 조절 */
+    row-gap: 40px; /* 줄 사이 간격 */
+    column-gap: 20px; /* 버튼 간격 */
+    width: 100%; /* 부모 컨테이너 너비 */
+    font-family: 'JUA';
+    font-size: 20px;
+}
+
+.button_design2{
+	margin-right : 10px;
+	width : 150px;
+	height : 50px;
+	border-radius: 40px;
+	border : 3px solid #8c8c8c;
+	background-color: #ffffff;
+	font-family: 'JUA';
+}
+
+.sub_nav{
+	
+	padding : 0;
+	widows : 300px;
+	display : flex;
+	flex-direction: row;
+	align-items: center;
+	padding-bottom: 60px;
+	gap : 30px;
+	
+}
+
+.cart_icon, .button_design2 {
+    cursor: pointer; /* 버튼 클릭하면 클릭 반응하는 버튼 디자인 함 */
+}
+
+#star_score{
+	font-family: 'JUA';
+	font-size: 15px;
+}
+
+.foot{
+	bottom : 0;
+	left : 0;
+	display: flex;
+	justify-content :center;
+	align-items: center;
+	gap : 20px;
+	margin-bottom: 80px;
+}
+
+a{
+	text-decoration: none;
+	font-size: 10px;
+	color : #000000;
+}
+
+
+
+.img_tag{
+	margin-bottom: 10px;
+}
+
+hr.border2 {
+  
+  width: 100%; 
+  border: 0; 
+  border-top: 2px solid #f5f5f5; 
+}
+
+.category_icon{
+	border : 1px solid #000000;
+}
+
+
+
+
+/* 여기 아래부터는 기존 네이버 장바구니 css 부분임*/
+
+
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.story{
+	
+margin-bottom: 20px;
+	
+	
+}
+
+
+
+
+hr.border2 {
+  
+  width: 100%; 
+  border: 0; 
+  border-top: 2px solid #f5f5f5; 
+}
+
+.foot{
+	bottom : 0;
+	left : 0;
+	display: flex;
+	justify-content :center;
+	align-items: center;
+	gap : 20px;
+	margin-bottom: 80px;
+}
+
+a{
+	text-decoration: none;
+	font-size: 10px;
+	color : #000000;
+}
+
+/* ------------------------------------------위에는 마지막 부분 */
+
+/*--------------------------------------------위에는카트 내부 아래 부분 디자인  */
+.cart_body { /* 여기서 영역 넓힐수있음 */
+	width: 100%;
+	height: 225px;
+	display: flex;
+	background-color: #fff;
+	flex-direction: row;
+	padding-left: 20px;
+}
+
+.checkbox-wrapper {
+	flex-shrink: 0; /* 체크박스 크기 고정 */
+	display: flex;
+	align-items: center;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid lightgray;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+	transform: scale(1.5); /* 체크박스 크기 더 키움 */
+	cursor: pointer; /* 클릭 가능한 느낌 */
+}
+
+/*카트 바디 1  */
+.cart_body1 {
+	width: 40%;
+	border-bottom: 1px solid lightgray;
+	border-right: 1px solid lightgray;
+	border-top: 1px solid gray;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	display: flex;
+	flex-direction: column; /* 기본적으로 세로 정렬 */
+	padding-left: 15px;
+}
+
+#cart_body_head {
+	display: flex;
+	margin-bottom: 10px;
+	align-items: center;
+}
+
+
+
+
+
+
+/*카트 바디 2 */
+.cart_body2 {
+	width: 30%;
+	background-color: #fff;
+	padding-top: 8px;
+	padding-bottom: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-bottom: 1px solid lightgray;
+	border-right: 1px solid lightgray;
+	border-top: 1px solid gray;
+	align-items: center;
+}
+
+/* 카트 바디 3 */
+
+.cart_body3 {
+	width: 15%;
+	padding-top: 20px;
+	padding-bottom: 24px;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-right: 1px solid gray;
+	border-bottom: 1px solid lightgray;
+	border-right: 1px solid lightgray;
+	border-top: 1px solid gray;
+}
+
+
+
+.cart_body4 {
+	display: flex;
+	flex-direction: column;
+	width: 15%;
+	padding-top: 24px;
+	padding-bottom: 24px;
+	padding-left: 15px;
+	padding-right: 15px;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid lightgray;
+	border-right: 1px solid lightgray;
+	border-bottom: 1px solid lightgray
+}
+
+/*-------------------------------------------------------(카트 바디)  */
+#line {
+	border: none;
+	height: 3px;
+	margin: 0px;
+	color: black;
+	background-color: black;
+}
+
+#cupon {
+	display: inline-block;
+	padding: 5px 10px; /* 버튼 안 여백 */
+	border: 2px solid #00c73c; /* 테두리 색상 */
+	color: #00c73c; /* 글자 색상 */
+	font-size: 13px; /* 글자 크기 */
+	font-weight: bold; /* 글자 두께 */
+	text-align: center; /* 텍스트 가운데 정렬 */
+	background-color: #fff; /* 배경색 */
+	cursor: pointer; /* 포인터 커서 */
+	margin-left: auto;
+}
+
+#cart_link2 {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.cart_link {
+	flex-grow: 1; /* 링크가 가능한 공간을 차지하도록 설정 */
+	font-size: 14px;
+	text-decoration: none;
+	color: #333; /*링크 디자인 정하고 바꾸든 합니ㅣ다  */
+	display: inline;
+}
+
+#check_box2 {
+	background-color: transparent; /* 배경 제거 */
+	border: none; /* 기본 테두리 제거 */
+	cursor: pointer; /* 클릭 표시 */
+	margin-right: 20px;
+	display: flex;
+	align-items: center;
+}
+
+.cart_header {
+	width: 100%; /* 전체 너비를 채우기 */
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /* 좌우 요소를 양 끝으로 배치 */
+	padding: 0 20px; /* 좌우 여백 추가 */
+	box-sizing: border-box; /* 패딩 포함 크기 */
+}
+
+.cart_header h2 {
+	margin: 0; /* 제목의 기본 여백 제거 */
+	display: inline-flex; /* 체크박스와 함께 정렬 */
+	align-items: center; /* 세로 가운데 정렬 */
+}
+
+/*여기 위 부터는  카트 안에 내용 부분들 디자인 임  */
+main {
+	display: block;
+	width: 100%;
+	height: auto; /* 높이를 콘텐츠에 맞게 */
+	overflow: visible; /* 스크롤 제한 해제 */
+	
+}
+
+@font-face {
+	font-family: 'JUA';
+	src: url("/naver/resources/font/JUA.ttf") format('truetype');
+}
+
+.story {
+	margin-top: 20px;
+	margin-left: 250px;
+	margin-right: 250px;
+	background-color: #FAFBFC;
+	color: #777777;
+	font-size: 15px;
+	overflow: auto;
+}
+
+.cart_main_back {
+	margin-top: 10px;
+	width: 100%;
+	height: 450px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #F4F4F4;
+	margin-top: 200px;
+}
+
+.cart_main_front {
+	width: 70%;
+	height: 400px;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	border-radius: 30px;
+	margin-bottom: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 20px;
+}
+
+
+
+/*---------------- 위에는  메인배경임 ----------------------- */
+
+/* 여기아래는 footer부분 */
+
+
+.payment {
+	position: fixed;
+	bottom: 0; /* 화면 하단에 고정 */
+	left: 0; /* 화면 왼쪽에 고정 */
+	width: 100%; /* 화면 너비로 확장 */
+	height: 10%;
+	background-color: black;
+	z-index: 1000; /* 다른 요소 위로 올리기 */
+}
+
+.payment2 {
+	margin-top: 0.8%;
+	margin-right: 4%;
+	display: flex;
+	flex-direction: row;
+	float: right;
+	gap: 10px;
+	align-items: center;
+}
+
+.order {
+	color: #f5f5f5;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: 'JUA';
+}
+
+.order2 {
+	color: #f5f5f5;
+	font-size: 23px;
+	font-weight: bold;
+	font-family: 'JUA';
+	display: flex;
+	gap: 3px;
+}
+
+.naver_pay_btn {
+	border: none;
+	width: 200px;
+	height: 40px;
+	border-radius: 40px;
+	background-color: #fff;
+	color: #000000;
+	font-size: 20px;
+	font-family: 'JUA';
+	cursor: pointer;
+}
+
+.naver_pay_btn:active {
+	transform: scale(0.95);
+}
+
+
+.naver_pay_btn2:active {
+	transform: scale(0.95);
+}
+
+#payment_list {
+	display: none;
+	padding: 15px;
+	position: absolute;
+	bottom: 60px;
+	right: 230px;
+	border: 1px solid #EAEAEA;
+	border-radius: 30px;
+	width: 312px;
+	height: 265px;
+	background-color: #ffffff;
+	bottom: 90px;
+}
+
+.list {
+	width: 100%;
+	height: 150px;
+	background-color: #EAEAEA;
+	flex-direction: column;
+	gap: 4px;
+}
+
+#up {
+	border: none;
+	background-color: transparent;
+}
+------------------------------------------------- /* 헤더 */
+
+
+

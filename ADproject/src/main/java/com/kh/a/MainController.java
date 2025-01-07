@@ -56,6 +56,7 @@ public class MainController {
 		return common.Common.login.VIEW_PATH + "member_join_page.jsp";
 	}
 	
+<<<<<<< HEAD
 	 @RequestMapping("/terms.do")
 	    public String termsPage(Model model) {
 	        model.addAttribute("termsTitle", "이용약관");
@@ -72,6 +73,23 @@ public class MainController {
 	    public String supportPage() {
 	        return common.Common.main.VIEW_PATH + "support.jsp"; 
 	    }
+=======
+	@RequestMapping("cart_page.do")
+	public String cart_page() {
+		
+		return common.Common.cart.VIEW_PATH +"cart.jsp";
+		
+	}
+	
+	
+	@RequestMapping("check_out.do")
+	public String checkout() {
+		
+		return common.Common.cart.VIEW_PATH +"check_out.jsp";
+		
+	}
+	
+>>>>>>> branch 'master' of https://github.com/Kimtaeyeob/ADproject.git
 	
 }
 
