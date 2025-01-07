@@ -2,15 +2,32 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
-	
-	
+
+
 	<bean id="Academy_daoBean" class="dao.AcademyDAO">
 		<property name="sqlSession" ref="sqlSessionBean" />
 	</bean>
-	
-	
-	
-	
+
+
+	<bean id="schedule_dao_bean" class="dao.ScheduleDAO">
+		<constructor-arg ref="sqlSessionBean" />
+	</bean>
+
+	<bean id="board_daoBean" class="dao.BoardDAO">
+		<property name="sqlSession" ref="sqlSessionBean" />
+	</bean>
+
+	<bean id="comment_daoBean" class="dao.CommentDAO">
+		<property name="sqlSession" ref="sqlSessionBean" />
+	</bean>
+
+	<bean id="Login_daoBean" class="dao.LoginDAO">
+		<property name="sqlSession" ref="sqlSessionBean" />
+	</bean>
+
+
+
+
 </beans>
 
 

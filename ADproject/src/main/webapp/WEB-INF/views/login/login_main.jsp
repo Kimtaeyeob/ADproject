@@ -17,6 +17,11 @@
 		crossorigin="anonymous">
 	</script>
 	
+	<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+  	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src = "/a/resources/js/httpRequest.js"></script>
+	
+	
 	<script>
 	// 입력 내용에 따라 x 버튼 표시/숨김
 	function toggleClearButton(input) {
@@ -36,6 +41,33 @@
 	    button.style.display = 'none'; // x 버튼 숨김
 	}
 	
+	function send(f){
+		let stepup_id = f.stepup_id.value;
+		let stepup_password = f.stepup_password.value;
+ 		
+		let url = "login.do";
+		let param = "stepup_id="+encodeURIComponent(stepup_id) + "&stepup_password=" + encodeURIComponent(stepup_password);
+		alert(param);
+		
+		sendRequest(url, param, login_result, "post");
+		
+	}
+	
+	function login_result(){
+		
+		if( xhr.readyState == 4 && xhr.status == 200 ){
+			
+			let data = xhr.responseText;
+			//let json = (new Function('return '+data))();
+			
+			if(data === "로그인 실패"){
+				alert(data);
+			}else{
+				location.href = "mainhome.do";
+			}
+				
+		}
+	}
 	
 	</script>
 	
@@ -45,33 +77,54 @@
 	 
 		
 		<div class = "main_logo">
-			<a href = "/mainhome.do"><img src="/a/resources/img/b_logo.png" class="logo_img" style="width: 200px; height: 100px;"></a>
+			<a href = "/a/mainhome.do"><img src="/a/resources/img/b_logo.png" class="logo_img" style="width: 200px; height: 100px;"></a>
 		</div>
 			
-			<form>
+			
 				<div class="input">
-				    <div class="input-container">
-				        <!-- 아이디 입력 -->
-				        <input type="text" name="id" class="id" placeholder="이메일 또는 아이디" oninput="toggleClearButton(this)" />
-					        <span class="clear-button" onclick="clearInput(this)">
-						        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-		  						<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/></svg>
-							</span>
-				    </div>
-				
-				    <div class="input-container">
-				        <!-- 비밀번호 입력 -->
-				        <input type="password" name="pwd" class="pwd" placeholder="비밀번호" oninput="toggleClearButton(this)" />
-					        <span class="clear-button" onclick="clearInput(this)">
-						        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-		  						<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/></svg>
-							</span>
-				    </div>
-				    
-				    <input type = "button" value = "로그인" class = "login_button" onclick = "check();">
+					<form>
+						<div class = "sign">
+					    <div class="input-container">
+					        <!-- 아이디 입력 -->
+					        <input type="text"  name="stepup_id" class="id" placeholder="이메일 또는 아이디" oninput="toggleClearButton(this)" />
+						        <span class="clear-button" onclick="clearInput(this)">
+							        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+			  						<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/></svg>
+								</span>
+					    </div>
 					
+					    <div class="input-container">
+					        <!-- 비밀번호 입력 -->
+					        <input type="password" name="stepup_password" class="pwd" placeholder="비밀번호" oninput="toggleClearButton(this)" />
+						        <span class="clear-button" onclick="clearInput(this)">
+							        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+			  						<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/></svg>
+								</span>
+					    </div>
+					  
+					    
+					    <input type = "button" value = "로그인" class = "login_button" onclick = "send(this.form);">
+						</div>
+					</form>
+				
 					<div class = "input-container">
-						<button class = "social"><img src = "/a/resources/img/naver_icon.png" style="width: 30px; height: 30px;" ></button>
+						<button class="social"><img src="/a/resources/img/naver_icon.png" style="width: 30px; height: 30px;" id="custom_naver_button">
+  						<div id="naver_id_login" style="display: none;"></div>
+					</button>
+
+						<script type="text/javascript">
+						  var naver_id_login = new naver_id_login("odFsICEfVCT0HfjPpZuG", "http://localhost:9090/a/login/naver");
+						  var state = naver_id_login.getUniqState();
+						  naver_id_login.setButton("green", 4, 40); 
+						  naver_id_login.setDomain("http://localhost:9090/a/");
+						  naver_id_login.setState(state);
+						  naver_id_login.setPopup();
+						  naver_id_login.init_naver_id_login();
+						  document.getElementById("custom_naver_button").addEventListener("click", function () {
+						  document.getElementById("naver_id_login").firstChild.click();
+						  });
+						</script>
+
 						<button class = "social"><img src = "/a/resources/img/google_icon.png" style="width: 30px; height: 30px;" ></button>
 						<button class = "social"><img src = "/a/resources/img/kakaotalk_icon.png" style="width: 30px; height: 30px;" ></button>
 					</div>
@@ -85,7 +138,7 @@
 				
 					
 				
-			</form>
+			
 		
 		
 		

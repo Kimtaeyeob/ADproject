@@ -1,0 +1,251 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+@font-face {
+    font-family: 'JUA';
+    src: url("/a/resources/font/JUA.ttf") format('truetype');
+}
+
+.title{
+	
+	margin-right: 190px;
+	margin-left: 190px;
+	height: 100px;
+	display : flex;
+	align-items : center;
+	
+}
+
+.title_line{
+	 font-family: 'JUA';
+	 font-size: 50px;
+}
+
+.title_line1{
+	 font-family: 'JUA';
+	 font-size: 30px;
+}
+
+.academy_box{
+	margin-right: 190px;
+	margin-left: 190px;
+	display: flex;
+	flex-direction: row;
+	gap : 5px;
+}
+
+.main_img{
+	width: 600px;
+	height: 600px;
+	
+	
+}
+
+.main1{
+	border-radius: 20px;
+}
+
+.sub_center{
+	display: flex;
+	flex-direction: column;
+	gap : 5px;
+}
+
+.sub_img{
+	width: 674px;
+	height: 300px;
+}
+
+.box{
+	width: 100%;
+	height: 600px;
+	display: flex;
+	flex-direction: row;
+}
+
+.con{
+	width: 1100px;
+	height: 100%;
+}
+
+.cash{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cash_window{
+	width: 400px;
+	height: 600px;
+	border : 1px solid #000000;
+}
+
+
+.content{
+	margin-top : 25px;
+	margin-right: 190px;
+	margin-left: 190px;
+	display: flex;
+	flex-direction: column;
+	height: 120px;
+}
+
+.tag{
+	margin-right: 190px;
+	margin-left: 190px;
+	height: 40px;
+}
+
+.academy_boss{
+	margin-right: 190px;
+	margin-left: 190px;
+	height: 40px;
+}
+
+.academy_content{
+	margin-right: 190px;
+	margin-left: 190px;
+	height: 40px;
+}
+
+.academy_teacher{
+	margin-right: 190px;
+	margin-left: 190px;
+	height: 40px;
+}
+
+.academy_schedule{
+	margin-right: 190px;
+	margin-left: 190px;
+	height: 800px;
+}
+
+.academy_map{
+	margin-right: 190px;
+	margin-left: 190px;
+	height: 600px;
+	display: flex;
+	flex-direction: column;
+}
+
+.academy_review{
+	margin-right: 190px;
+	margin-left: 190px;
+	height: 40px;
+}
+
+.academy_Amenities{
+	margin-right: 190px;
+	margin-left: 190px;
+	height: 40px;
+}
+
+
+
+
+table {
+	width: 100%;
+	max-width: 1200px;
+	margin: 20px auto;
+	border-collapse: collapse;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: #444444;
+}
+
+th, td {
+	padding: 12px 15px;
+	text-align: center;
+	border: 1px solid #666666;
+	font-weight: 600;
+	border-radius: 8px;
+	transition: background-color 0.3s ease;
+}
+
+th {
+	background-color: #555555;
+	color: #000000; /* 글씨 색을 검정으로 변경 */
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+tbody tr:nth-child(odd) {
+	background-color: #2d2d2d; /* 더 진한 회색 */
+}
+
+tbody tr:nth-child(even) {
+	background-color: #3c3c3c; /* 조금 더 진한 회색 */
+}
+
+tbody tr:hover {
+	background-color: #666666;
+	transition: background-color 0.3s ease;
+}
+
+.time-column {
+	width: 15%;
+	font-weight: 700;
+	font-size: 1.2rem;
+	background-color: #444444; /* 조금 더 진한 회색 */
+	color: #FFF; /* 글씨 색을 검정으로 변경 */
+}
+
+.day-column {
+	width: 14%;
+	color: #FFF; /* 글씨 색을 검정으로 변경 */
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+td {
+	font-size: 1rem;
+	color: #FFF; /* 글씨 색을 검정으로 변경 */
+	font-weight: 600;
+}
+
+td c {
+	color: #999999;
+	font-size: 0.9rem;
+}
+
+/* 격자무늬 효과 */
+tbody tr:nth-child(odd) td:nth-child(odd), tbody tr:nth-child(even) td:nth-child(even)
+	{
+	background-color: #666666; /* 짙은 회색 */
+}
+
+tbody tr:nth-child(odd) td:nth-child(even), tbody tr:nth-child(even) td:nth-child(odd)
+	{
+	background-color: #777777; /* 조금 밝은 회색 */
+}
+
+/* Hover 효과로 가로세로 셀 색상 밝히기 */
+tbody td:hover {
+	background-color: #888888 !important; /* 더 밝은 색으로 변경 */
+}
+
+tbody tr:hover td {
+	background-color: #888888 !important; /* 전체 셀에 대해 밝은 색 적용 */
+}
+
+thead th:first-child {
+	border-top-left-radius: 10px;
+}
+
+thead th:last-child {
+	border-top-right-radius: 10px;
+}
+
+tbody tr:last-child td:first-child {
+	border-bottom-left-radius: 10px;
+}
+
+tbody tr:last-child td:last-child {
+	border-bottom-right-radius: 10px;
+}

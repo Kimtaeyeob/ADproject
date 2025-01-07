@@ -1,27 +1,19 @@
 package vo;
 
 public class AcademyVO {
-	private int academy_idx, academy_longitude, academy_latitude;
+	private int academy_idx;
+	
 	private float rating;
+	private double academy_longitude, academy_latitude;
 	private String academy_name, academy_phone, academy_content, academy_business, academy_profile, academy_address, academy_category, academy_region;
+	
 	public int getAcademy_idx() {
 		return academy_idx;
 	}
 	public void setAcademy_idx(int academy_idx) {
 		this.academy_idx = academy_idx;
 	}
-	public int getAcademy_longitude() {
-		return academy_longitude;
-	}
-	public void setAcademy_longitude(int academy_longitude) {
-		this.academy_longitude = academy_longitude;
-	}
-	public int getAcademy_latitude() {
-		return academy_latitude;
-	}
-	public void setAcademy_latitude(int academy_latitude) {
-		this.academy_latitude = academy_latitude;
-	}
+	
 	public String getAcademy_name() {
 		return academy_name;
 	}
@@ -75,6 +67,18 @@ public class AcademyVO {
 	}
 	public void setRating(float rating) {
 		this.rating = rating;
+	}
+	public double getAcademy_longitude() {
+		return academy_longitude;
+	}
+	public void setAcademy_longitude(double academy_longitude) {
+		this.academy_longitude = academy_longitude;
+	}
+	public double getAcademy_latitude() {
+		return academy_latitude;
+	}
+	public void setAcademy_latitude(double academy_latitude) {
+		this.academy_latitude = academy_latitude;
 	}
 	
 

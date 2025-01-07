@@ -10,7 +10,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		
 	</select>
 
-
+	<select id="academy_list_one" parameterType="int"
+			resultType="aca">
+			
+		select * from ACADEMY where "academy_idx" = #{academy_idx}
+			
+	</select>
 
 
 
